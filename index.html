@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bodycam Sound</title>
+</head>
+<body>
+    <audio id="beepSound" src="nui://bodycam/sounds/beep.ogg" preload="auto"></audio>
+    <script>
+        window.addEventListener('message', function(event) {
+            if (event.data.transactionType === 'playSound') {
+                var audio = document.getElementById('beepSound');
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
